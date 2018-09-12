@@ -12,3 +12,20 @@ const barb = new Player('Barb');
 
 const match1 = new Match(jim, jane);
 const match2 = new Match(bob, barb);
+
+// Play the first rounds
+match1.play();
+match2.play();
+
+match1.winner.respawn();
+match2.winner.respawn();
+
+// Play the final rounds
+const finalMatch = new Match(match1.winner, match2.winner);
+finalMatch.play();
+
+
+
+
+
+//
