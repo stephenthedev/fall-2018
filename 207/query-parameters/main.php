@@ -8,7 +8,7 @@
 
  <h3>The mainy ways to GET things</h3>
  <a href="parameters.php?param1=something&param2=somethingelse">Click me for Static Query Parameters</a>
- <form action="parameters.php" method="POST">
+ <form action="parameters.php" method="GET">
    <label>Dynamic Ones</label>
    <input type="text" name="param1">
    <input type="text" name="param2">
