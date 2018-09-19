@@ -15,11 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListPage {
 
+  public items = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log('Constructed ListPage Anyone going to see the Nun?');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+  }
+
+  createItem() {
+    let item = prompt('What do you want to do?');
+    this.items.push(item);
   }
 
 }
