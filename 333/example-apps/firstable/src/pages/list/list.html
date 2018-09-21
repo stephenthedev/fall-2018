@@ -16,8 +16,8 @@
     <ion-item>Find something to do</ion-item>
 
     <ion-list-header>Things I added</ion-list-header>
-    <ion-item *ngFor="let item of items">
-      {{item + 123124124123}}
+    <ion-item *ngFor="let item of items" (click)="goToItem(item)">
+       <button (click)="removeItem(item)" ion-button small round color="danger">X</button> {{item}}
     </ion-item>
 
 
