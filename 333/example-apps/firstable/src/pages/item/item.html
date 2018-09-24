@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Item</ion-title>
+    <ion-title>{{selectedItem}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,20 @@
 
 <ion-content padding>
   <img src="https://media.makeameme.org/created/Wassup.jpg" alt="">
+  <br>
+
+  Single In  <input type="text" [ngModel]="someValue">
+  <br>
+  Single Out <input type="text" (ngModel)="someValue">
+  <br>
+  Both       <input type="text" [(ngModel)]="someValue">
+
 </ion-content>
+
+
+
+
+
+
+
+<!--  -->
