@@ -7,11 +7,11 @@
 
   <ion-list>
     <ion-item>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="firstChapter"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <button ion-button block primary>Ask a friend to continue the story!</button>
+      <button (click)="submitStory()" ion-button block primary>Ask a friend to continue the story!</button>
     </ion-item>
   </ion-list>
 
