@@ -4,6 +4,9 @@
 require('header.php');
 
 require('navbar.php');
+require('db.php');
+
+$myStories = getMyStories();
  ?>
 
 <img id="profile-pic" src="https://free-wired.com/wp-content/uploads/2018/05/headshot-resume-awesome-the-national-resume-writers-association-certification-of-headshot-resume.jpg" alt="">
@@ -23,46 +26,16 @@ require('navbar.php');
     </thead>
 
     <tbody>
-      <tr>
-          <td>2</td>
-          <td>Some awesome story</td>
-          <td>67</td>
-          <td>
-            <a href="#">Continue Writing</a>
-          </td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>Some awesome story</td>
-          <td>67</td>
-          <td>
-            <a href="#">Continue Writing</a>
-          </td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>Some awesome story</td>
-          <td>67</td>
-          <td>
-            <a href="#">Continue Writing</a>
-          </td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>Some awesome story</td>
-          <td>67</td>
-          <td>
-            <a href="#">Continue Writing</a>
-          </td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>Some awesome story</td>
-          <td>67</td>
-          <td>
-            <a href="#">Continue Writing</a>
-          </td>
-      </tr>
+
+      <?php foreach ($myStories as $story) { ?>
+        <tr>
+          <td><?php echo $story['chapter-number'] ?></td>
+          <td><?php echo $story['title'] ?></td>
+          <td><?php echo $story['total-chapters'] ?></td>
+          <td><a href="#">Continue Writing</a></td>
+        </tr>
+      <?php } ?>
+
     </tbody>
   </table>
 </section>
