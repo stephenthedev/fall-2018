@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SelectFriendPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FacebookControllerProvider } from '../../providers/facebook-controller/facebook-controller'
 
 @IonicPage()
 @Component({
@@ -14,12 +8,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'select-friend.html',
 })
 export class SelectFriendPage {
+  public friends: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public fbCtrl: FacebookControllerProvider
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SelectFriendPage');
+
+    this.fbCtrl.getFriends().then(friends => {
+      this.friends = friends;
+    });
   }
 
 }

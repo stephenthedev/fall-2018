@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SelectFriendPage } from '../pages/select-friend/select-friend';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
+import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { StoryControllerProvider } from '../providers/story-controller/story-con
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    StoryControllerProvider
+    StoryControllerProvider,
+    FacebookControllerProvider
   ]
 })
 export class AppModule {}
