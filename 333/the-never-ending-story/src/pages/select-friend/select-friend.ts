@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FacebookControllerProvider } from '../../providers/facebook-controller/facebook-controller'
+import { FacebookControllerProvider } from '../../providers/facebook-controller/facebook-controller';
+import { FriendPage } from '../../pages/friend/friend';
 
 @IonicPage()
 @Component({
@@ -8,13 +9,17 @@ import { FacebookControllerProvider } from '../../providers/facebook-controller/
   templateUrl: 'select-friend.html',
 })
 export class SelectFriendPage {
-  public friends: any;
+  public friends: [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public fbCtrl: FacebookControllerProvider
   ) {
+  }
+
+  selectingFriend(friend: string){
+    this.navCtrl.setRoot(FriendPage, {friend: friend});
   }
 
   ionViewDidLoad() {
