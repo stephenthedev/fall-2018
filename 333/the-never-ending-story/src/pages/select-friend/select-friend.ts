@@ -9,7 +9,7 @@ import { FriendPage } from '../../pages/friend/friend';
   templateUrl: 'select-friend.html',
 })
 export class SelectFriendPage {
-  public friends: [];
+  public friends: any;
 
   constructor(
     public navCtrl: NavController,
@@ -18,7 +18,7 @@ export class SelectFriendPage {
   ) {
   }
 
-  selectingFriend(friend: string){
+  selectingFriend(friend: any){
     this.navCtrl.setRoot(FriendPage, {friend: friend});
   }
 

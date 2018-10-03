@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FriendPage {
 
-  public selectedFriend: friend;
+  public selectedFriend: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.selectedFriend = this.navParams.get('friend');
