@@ -1,19 +1,15 @@
 
 import { Injectable } from '@angular/core';
-
 /*
   Generated class for the FacebookControllerProvider provider.
-
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
 export class FacebookControllerProvider {
-
   constructor() {
     console.log('Hello FacebookControllerProvider Provider');
   }
-
   getFriends() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -33,5 +29,4 @@ export class FacebookControllerProvider {
       }, 1000)
     });
   }
-
 }
