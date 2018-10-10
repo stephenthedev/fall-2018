@@ -4,7 +4,6 @@ import { LoadingController } from 'ionic-angular';
 
 /*
   Generated class for the StoryControllerProvider provider.
-
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
