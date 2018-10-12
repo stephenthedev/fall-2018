@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SelectFriendPage } from '../pages/select-friend/select-friend';
+import { ChosenFriendPage } from '../pages/chosen-friend/chosen-friend';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
 import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
 
@@ -14,7 +15,8 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
   declarations: [
     MyApp,
     HomePage,
-    SelectFriendPage
+    SelectFriendPage,
+    ChosenFriendPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
   entryComponents: [
     MyApp,
     HomePage,
-    SelectFriendPage
+    SelectFriendPage,
+    ChosenFriendPage
   ],
   providers: [
     StatusBar,
