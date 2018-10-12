@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FacebookControllerProvider } from '../../providers/facebook-controller/facebook-controller'
+import { ChosenFriendPage } from '../chosen-friend/chosen-friend';
+import { FacebookControllerProvider } from '../../providers/facebook-controller/facebook-controller';
+
 
 @IonicPage()
 @Component({
@@ -23,6 +25,14 @@ export class SelectFriendPage {
     this.fbCtrl.getFriends().then(friends => {
       this.friends = friends;
     });
+  }
+
+  confirmFriend(){
+  }
+
+
+  pointFriend(image, name) {
+    this.navCtrl.push(ChosenFriendPage, {image: image, data: name});
   }
 
 }
