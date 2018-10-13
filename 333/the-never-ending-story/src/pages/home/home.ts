@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SelectFriendPage } from '../select-friend/select-friend';
+import { FriendSelectedPage } from '../friend-selected/friend-selected';
 import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
 
 @Component({
