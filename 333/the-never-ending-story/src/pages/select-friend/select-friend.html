@@ -26,14 +26,8 @@
       <ion-avatar item-start>
         <img src="{{friend.picture}}">
       </ion-avatar>
-      <h2>{{friend.name}}</h2>
+      <h2 (click)="chooseFriend(friend)">{{friend.name}}</h2>
     </ion-item>
   </ion-list>
-
-
-
-
-
-
 
 </ion-content>
