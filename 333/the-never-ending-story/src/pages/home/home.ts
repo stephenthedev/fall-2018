@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SelectFriendPage } from '../select-friend/select-friend';
+import { FbLoginPage } from '../fb-login/fb-login';
 import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
 
 @Component({
@@ -20,8 +21,11 @@ export class HomePage {
       .then((storyId) => this.chooseFriends(storyId));
   }
 
+  loginToFB() {
+    this.navCtrl.push(FbLoginPage);
+  }
+
   chooseFriends(storyId: any) {
     this.navCtrl.push(SelectFriendPage, {storyId: storyId});
   }
-
 }
