@@ -7,6 +7,7 @@ import { StoryControllerProvider } from '../../providers/story-controller/story-
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
   public firstChapter: string;
@@ -16,8 +17,7 @@ export class HomePage {
   }
 
   submitStory() {
-    this.storyCtrl.saveStory(this.firstChapter)
-      .then((storyId) => this.chooseFriends(storyId));
+    this.storyCtrl.saveStory(this.firstChapter).then((storyId) => this.chooseFriends(storyId));
   }
 
   chooseFriends(storyId: any) {

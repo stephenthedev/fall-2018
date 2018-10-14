@@ -19,10 +19,7 @@ export class StoryControllerProvider {
     return new Promise((resolve, reject) => {
       let loader = this.loadingCtrl.create();
       loader.present();
-      setTimeout(() => {
-        loader.dismiss();
-        resolve();
-      }, 3000);
+      setTimeout(() => { loader.dismiss(); resolve(); }, 1000);
     });
   }
 
