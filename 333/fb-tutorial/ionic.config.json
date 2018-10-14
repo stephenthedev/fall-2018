@@ -1,0 +1,7 @@
+{
+  "name": "fb-tutorial",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
