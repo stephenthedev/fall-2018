@@ -1,31 +1,27 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
-import { SelectFriendPage } from '../select-friend/select-friend';
-import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
-import {FacebookInfoPage} from '../facebook-info/facebook-info';
 
+/**
+ * Generated class for the FacebookLoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-facebook-login',
+  templateUrl: 'facebook-login.html',
 })
-export class HomePage {
+export class FacebookLoginPage {
 
-  public firstChapter: string;
-
-  constructor(public navCtrl: NavController, public storyCtrl: StoryControllerProvider,public fb: Facebook) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fb: Facebook) {
   }
 
-  submitStory() {
-    this.storyCtrl.saveStory(this.firstChapter)
-      .then((storyId) => this.chooseFriends(storyId));
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad FacebookLoginPage');
   }
-
-  chooseFriends(storyId: any) {
-    this.navCtrl.push(SelectFriendPage, {storyId: storyId});
-  }
-
   loginAction()
 {
     // Login with permissions
@@ -55,7 +51,7 @@ export class HomePage {
                 console.log("Email : " + email);
 
                 // => Open user session and redirect to the next page
-    this.navCtrl.push(FacebookInfoPage, {Gen: gender, Birth: birthday, Name: name, Email: email});
+
             });
 
         }
@@ -70,8 +66,6 @@ export class HomePage {
     .catch((e) => {
         console.log('Error logging into Facebook', e);
     });
-
 }
-
 
 }

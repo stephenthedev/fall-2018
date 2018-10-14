@@ -1,5 +1,7 @@
 {
   "name": "the-never-ending-story",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
