@@ -1,15 +1,17 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Facebook Tutorial
+            FB Integration Assignment
         </ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <div class="intro">
-        Tap the button below to log-in with Facebook
-    </div>
-    <div class="btn_container">
-        <button ion-button full (click)="loginAction();">Login with Facebook</button>
-    </div>
-</ion-content> 
+
+        Tap the button below to use the Facebook to login
+
+    <ion-item>
+
+        <button [navPush]="fbLogin" ion-button block primary>Go to FB Login</button>
+      </ion-item>
+
+</ion-content>
