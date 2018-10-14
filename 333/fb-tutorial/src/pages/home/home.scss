@@ -1,0 +1,24 @@
+page-home {
+    .intro {
+        text-align: center;
+        border-bottom: 1px solid #e2e2e2;
+        padding-bottom: 14px;
+    }
+
+    .btn_container {
+        padding-top: 14px;
+
+        button {
+            background: #3b5998;
+        }
+    }
+
+    .inspiring_quotes_btn {
+      padding-top: 28px;
+
+        button {
+          background: #4CAF50;  //Green
+          font-size: 16px;
+        }
+    }
+}
