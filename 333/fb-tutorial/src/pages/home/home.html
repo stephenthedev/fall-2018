@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Facebook Tutorial
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="intro">
+        Tap the button below to log-in with Facebook
+    </div>
+    <div class="btn_container">
+        <button ion-button full (click)="loginAction();">Login with Facebook</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="extraPage">
+      Tap the button below to journey towards the Darkness
+    </div>
+    <div class="extraButton">
+      <button (click)="goToExtra()" ion-button block primary>Enter the void</button>
+    </div>
+
+</ion-content>
