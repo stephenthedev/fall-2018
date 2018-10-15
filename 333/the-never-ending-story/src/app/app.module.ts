@@ -9,12 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { SelectFriendPage } from '../pages/select-friend/select-friend';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
 import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
-
+import { FriendSelectedPage } from '../pages/friend-selected/friend-selected';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    SelectFriendPage
+    SelectFriendPage,
+    FriendSelectedPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,8 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
   entryComponents: [
     MyApp,
     HomePage,
-    SelectFriendPage
+    SelectFriendPage,
+    FriendSelectedPage
   ],
   providers: [
     StatusBar,
