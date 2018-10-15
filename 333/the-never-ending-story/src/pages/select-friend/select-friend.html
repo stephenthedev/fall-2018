@@ -1,6 +1,5 @@
 <!--
   Generated template for the SelectFriendPage page.
-
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
@@ -26,7 +25,7 @@
       <ion-avatar item-start>
         <img src="{{friend.picture}}">
       </ion-avatar>
-      <h2>{{friend.name}}</h2>
+      <h2 (click)="showFriendPage(friend.id)">{{friend.name}}</h2>
     </ion-item>
   </ion-list>
 
