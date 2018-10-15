@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SelectFriendPage } from '../select-friend/select-friend';
 import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
+import { FacebookPage } from '../facebook/facebook';
 
 @Component({
   selector: 'page-home',
@@ -18,6 +19,9 @@ export class HomePage {
   submitStory() {
     this.storyCtrl.saveStory(this.firstChapter)
       .then((storyId) => this.chooseFriends(storyId));
+  }
+  goToFaceBookPage(){
+    this.navCtrl.push(FacebookPage);
   }
 
   chooseFriends(storyId: any) {
