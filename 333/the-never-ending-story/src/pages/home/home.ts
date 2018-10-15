@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SelectFriendPage } from '../select-friend/select-friend';
-import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
+import { StoryControllerProvider } from '../../providers/story-controller/story-controller'
 
 @Component({
   selector: 'page-home',
@@ -20,8 +20,7 @@ export class HomePage {
       .then((storyId) => this.chooseFriends(storyId));
   }
 
-  chooseFriends(storyId: any) {
-    this.navCtrl.push(SelectFriendPage, {storyId: storyId});
+  chooseFriends(storyId) {
+    this.navCtrl.push(SelectFriendPage, { storyId: storyId });
   }
-
 }

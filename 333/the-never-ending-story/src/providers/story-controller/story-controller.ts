@@ -15,15 +15,14 @@ export class StoryControllerProvider {
     console.log('Hello StoryControllerProvider Provider');
   }
 
-  saveStory(chapter: string) {
-    return new Promise((resolve, reject) => {
-      let loader = this.loadingCtrl.create();
-      loader.present();
-      setTimeout(() => {
-        loader.dismiss();
-        resolve();
-      }, 3000);
+  saveStory(chapter: string){
+    return new Promise((resolve, reject) =>{
+        let loader = this.loadingCtrl.create();
+        loader.present();
+        setTimeout(() => {
+          loader.dismiss();
+          resolve();
+        }, 3000);
     });
   }
-
 }
