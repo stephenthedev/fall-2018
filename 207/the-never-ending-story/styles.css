@@ -1,0 +1,191 @@
+/* navbar styles */
+/*
+dark blue  #010A26
+blue       #011640
+light blue #B6D6F2
+white      #FFFFFF
+red        #E83338
+ */
+
+body, html {
+  margin: 0;
+}
+#nav {
+  width: 100%;
+  background-color: #010a26;
+  height: 45px;
+}
+
+#nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav ul li {
+  display: block;
+  float: left;
+}
+
+#nav ul li:hover {
+  background-color: #B6D6F2;
+}
+
+#nav ul li:nth-child(1) {
+  background-color: #011640;
+}
+
+#nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  min-width: 200px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+}
+
+
+/* index styles */
+#feature {
+  background-image: url(https://s.tmimgcdn.com/blog/wp-content/uploads/2014/09/blurryback.jpg?x54449);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+#feature button {
+  font-size: 2.5em;
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #B6D6F2;
+  border: none;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+#featured-stories {}
+
+#featured-stories article {
+  width: 48%;
+  margin-left: 1%;
+  box-sizing: border-box;
+  padding: 8px;
+  float: left;
+}
+
+#featured-stories h3, #featured-stories p {
+  box-shadow: 1px 1px 1px black;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+
+/* profile styles */
+#profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  position: absolute;
+  left: 50px;
+  top: 75px;
+}
+
+#profile-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+#profile-content table {
+  width: 100%;
+  margin-top: 40px;
+  float: right;
+  margin-bottom: 40px;
+}
+
+#profile-content table th {
+  height: 45px;
+  background-color: #011640;
+  color: white;
+}
+
+#profile-content table td {
+  text-align: center;
+  height: 30px;
+  outline: 1px solid #B6D6F2;
+  padding-left: 2px;
+}
+
+#profile-content table td:nth-child(2) {
+  text-align: left;
+}
+
+#new-story {
+  float: right;
+  text-decoration: none;
+  color: white;
+  background-color: #B6D6F2;
+  font-size: 32px;
+  padding: 8px;
+  box-shadow: 1px 1px 5px black;
+}
+
+#profile-content h2 {
+  font-size: 52px;
+  margin-bottom: 0;
+}
+
+/* story page styles */
+#new-story-title {
+  text-align: center;
+}
+
+#past-chapters {
+  max-width: 900px;
+  margin: auto;
+}
+
+#past-chapters p {
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px black;
+  margin-bottom: 8px;
+  padding: 16px;
+  font-size: 18px;
+}
+
+#new-chapter {
+  display: block;
+  width: 900px;
+  height: 200px;
+  margin: auto;
+}
+
+#new-story-actions {
+  width: 900px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+}
+
+#new-story-actions button {
+  float: right;
+  height: 50px;
+  color: white;
+  background-color: #B6D6F2;
+  margin-left: 10px;
+}
+
+/* footer styles */
+footer {
+  height: 200px;
+  line-height: 200px;
+  color: white;
+  text-align: center;
+  background-color: #010A26;
+  clear: both;
+}
