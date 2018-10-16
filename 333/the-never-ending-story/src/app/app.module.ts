@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -7,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SelectFriendPage } from '../pages/select-friend/select-friend';
+import { ChosenFriendPage } from '../pages/chosen-friend/chosen-friend';
+import { FbLoginPage } from '../pages/fb-login/fb-login'
+import { Facebook } from '@ionic-native/facebook';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
 import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
 
@@ -14,7 +18,9 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
   declarations: [
     MyApp,
     HomePage,
-    SelectFriendPage
+    SelectFriendPage,
+    ChosenFriendPage,
+    FbLoginPage
   ],
   imports: [
     BrowserModule,
@@ -24,14 +30,17 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
   entryComponents: [
     MyApp,
     HomePage,
-    SelectFriendPage
+    SelectFriendPage,
+    ChosenFriendPage,
+    FbLoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     StoryControllerProvider,
-    FacebookControllerProvider
+    FacebookControllerProvider,
+    Facebook,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
