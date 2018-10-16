@@ -1,6 +1,5 @@
 <!--
   Generated template for the SelectFriendPage page.
-
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
@@ -18,11 +17,11 @@
   <h1 text-center *ngIf="!friends">
     Finding your friends
     <br>
-    <img width="100%" src="https://media1.tenor.com/images/588522aa863a6abda5cb1a16d3d4bae6/tenor.gif?itemid=4089127">
+    <img width="100%" src="https://media1.tenor.com/images/588522aa863a6abda5cb1a16d3d4bae6/tenor.gif?itemid=408912">
   </h1>
 
   <ion-list>
-    <ion-item *ngFor="let friend of friends">
+    <ion-item  *ngFor="let friend of friends" (click)="friendpopup(friend.picture, friend.name)">
       <ion-avatar item-start>
         <img src="{{friend.picture}}">
       </ion-avatar>
