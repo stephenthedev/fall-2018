@@ -26,7 +26,7 @@
       <ion-avatar item-start>
         <img src="{{friend.picture}}">
       </ion-avatar>
-      <h2>{{friend.name}}</h2>
+      <button (click)="submitFriend(friend.name, friend.picture)"><h2>{{friend.name}}</h2></button>
     </ion-item>
   </ion-list>
 
