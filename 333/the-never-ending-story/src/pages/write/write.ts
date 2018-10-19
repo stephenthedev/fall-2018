@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { WritePage } from '../write/write';
+
 /**
- * Generated class for the ProfilePage page.
+ * Generated class for the WritePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,22 @@ import { WritePage } from '../write/write';
 
 @IonicPage()
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+  selector: 'page-write',
+  templateUrl: 'write.html',
 })
-export class ProfilePage {
+export class WritePage {
+
+  private shown = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    console.log('ionViewDidLoad WritePage');
   }
 
-  goToWrite() {
-    this.navCtrl.push(WritePage);
+  showStory() {
+    this.shown = !this.shown;
   }
 
 }

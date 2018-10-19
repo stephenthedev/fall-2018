@@ -10,6 +10,8 @@ import { SelectFriendPage } from '../pages/select-friend/select-friend';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ExplorePage } from '../pages/explore/explore';
+import { WritePage } from '../pages/write/write';
+import { StoryComponent } from '../components/story/story';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
 import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
 
@@ -20,7 +22,9 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
     SelectFriendPage,
     // ProfilePage,
     // ExplorePage,
-    TabsPage
+    TabsPage,
+    WritePage,
+    StoryComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
     SelectFriendPage,
     // ProfilePage,
     // ExplorePage,
-    TabsPage
+    TabsPage,
+    WritePage,
+    StoryComponent
   ],
   providers: [
     StatusBar,

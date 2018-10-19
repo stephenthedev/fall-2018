@@ -61,16 +61,23 @@ function getMyStories() {
 }
 
 function getStory() {
+  $connection = new mysqli('localhost:8889', 'root', 'root', 'tnes');
+
+  if ($connection->error) {
+    die("Connection Failed: {$connection->error}");
+  }
+
+  $story = $connection->query("SELECT * FROM stories WHERE id = 1")->fetch_assoc();
+  $chapterResults = $connection->query("SELECT * FROM chapters WHERE story_id = 1");
+
+  $chapters = [];
+  while ($row = $chapterResults->fetch_assoc()) {
+    $chapters[] = $row;
+  }
+
   return [
-    'title' => 'Some title once told me',
-    'chapters' => [
-      ['text' => 'All the paragraph text goes here'],
-      ['text' => 'All the paragraph text goes here'],
-      ['text' => 'All the paragraph text goes here'],
-      ['text' => 'All the paragraph text goes here'],
-      ['text' => 'All the paragraph text goes here'],
-      ['text' => 'All the paragraph text goes here'],
-    ]
+    'title' => $story['title'],
+    'chapters' => $chapters
   ];
 }
 

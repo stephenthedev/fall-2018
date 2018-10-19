@@ -12,6 +12,7 @@ $story = getStory();
 
 <section id="past-chapters">
   <?php foreach ($story['chapters'] as $chapter) { ?>
+    <h4><?php echo $chapter['title'] ?></h4>
     <p><?php echo $chapter['text'] ?></p>
   <?php } ?>
 </section>
