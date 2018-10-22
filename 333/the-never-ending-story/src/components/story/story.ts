@@ -13,6 +13,12 @@ import { Component } from '@angular/core';
 export class StoryComponent {
 
   text: string;
+  private chapters = [
+    {text: 'someTextHere'},
+    {text: 'someTextHere'},
+    {text: 'someTextHere'},
+    {text: 'someTextHere'},
+  ];
 
   constructor() {
     console.log('Hello StoryComponent Component');
