@@ -11,7 +11,10 @@ import { LoadingController } from 'ionic-angular';
 @Injectable()
 export class StoryControllerProvider {
 
-  constructor(public loadingCtrl: LoadingController) {
+  constructor(
+    public loadingCtrl: LoadingController,
+    public http: HttpClient
+  ) {
     console.log('Hello StoryControllerProvider Provider');
   }
 
@@ -24,6 +27,10 @@ export class StoryControllerProvider {
         resolve();
       }, 3000);
     });
+  }
+
+  listChaptersForAStory() {
+    return this.http.get('http://localhost:3000/chapters');
   }
 
 }

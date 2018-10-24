@@ -1,5 +1,11 @@
 const app = require('express')();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/chapters', (req, res) => res.json([
   {
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nisi expedita harum numquam autem dignissimos debitis accusantium fuga id officiis accusamus, ab dolores error porro assumenda ullam eum tempora libero et quo ipsam, quisquam nihil? Aliquid, reprehenderit. Aperiam neque possimus dignissimos quidem totam, doloribus porro quam inventore ut asperiores? Quasi perspiciatis quidem tenetur repellat sed fugit saepe porro beatae ab mollitia sit laboriosam rerum velit id iste, reiciendis delectus minus voluptas reprehenderit, sint similique adipisci officiis nobis consectetur amet. Dicta exercitationem accusantium ullam inventore laborum velit consequuntur aspernatur consectetur labore sit, cupiditate obcaecati neque quod saepe ducimus. Harum, sequi, dolores!'

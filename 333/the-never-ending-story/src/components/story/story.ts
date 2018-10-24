@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
 
 /**
  * Generated class for the StoryComponent component.
@@ -20,9 +21,14 @@ export class StoryComponent {
     {text: 'someTextHere'},
   ];
 
-  constructor() {
+  constructor(public storyCtrl: StoryControllerProvider) {
     console.log('Hello StoryComponent Component');
     this.text = 'Hello World';
+
+    this.storyCtrl.listChaptersForAStory().subscribe(
+      data => this.chapters = data,
+      err => console.error(err)
+    );
   }
 
 }

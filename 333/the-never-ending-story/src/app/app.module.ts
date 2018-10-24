@@ -15,6 +15,8 @@ import { StoryComponent } from '../components/story/story';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
 import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,6 +30,7 @@ import { FacebookControllerProvider } from '../providers/facebook-controller/fac
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
