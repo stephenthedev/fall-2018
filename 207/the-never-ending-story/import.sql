@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 22, 2018 at 11:48 PM
+-- Generation Time: Oct 24, 2018 at 11:54 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -71,6 +71,29 @@ CREATE TABLE `stories` (
 INSERT INTO `stories` (`id`, `title`, `author_id`, `created_date`, `is_done`) VALUES
 (1, 'Youtube is big brother.', 1, '2018-10-17', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `first_name` text NOT NULL,
+  `last_name` text NOT NULL,
+  `alias` text NOT NULL,
+  `img` text NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `alias`, `img`, `email`, `password`) VALUES
+(2, 'Prof', 'R', 'Batmannnnnnnnnnnn', '', 'rag@rag.com', '827ccb0eea8a706c4c34a16891f84e7b');
+
 --
 -- Indexes for dumped tables
 --
@@ -94,6 +117,12 @@ ALTER TABLE `stories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -106,9 +135,14 @@ ALTER TABLE `chapters`
 -- AUTO_INCREMENT for table `editor_picks`
 --
 ALTER TABLE `editor_picks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `stories`
 --
 ALTER TABLE `stories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
