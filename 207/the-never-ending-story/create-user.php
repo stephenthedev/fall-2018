@@ -13,6 +13,8 @@ if ($_POST['password'] != $_POST['confirm_password']) {
 
 require('db.php');
 
+$hashedPassword = md5($_POST['password']);
+
 runSafeQuery(
   "INSERT INTO users (first_name, last_name, email, password, alias)
     VALUES (?,?,?,?,?)
@@ -22,7 +24,7 @@ runSafeQuery(
     $_POST['first_name'],
     $_POST['last_name'],
     $_POST['email'],
-    $_POST['password'],
+    $hashedPassword,
     $_POST['alias']
   ]
 );

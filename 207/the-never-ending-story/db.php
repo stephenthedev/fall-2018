@@ -98,7 +98,13 @@ function runSafeQuery($query, $params) {
   }
   $result = $statement->get_result();
   $connection->close();
-  return $result;
+
+  $results = [];
+  while ($row = $result->fetch_array()) {
+    $results[] = $row;
+  }
+
+  return $results;
 }
 
 function removeExcerptById($id) {
