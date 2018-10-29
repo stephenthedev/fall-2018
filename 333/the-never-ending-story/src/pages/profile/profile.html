@@ -1,0 +1,63 @@
+<ion-content padding>
+
+<h1>Your Stories</h1>
+
+<ion-card>
+  <ion-card-header>
+    Things you're working on
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item (click)="goToWrite()">
+      Story 1
+    </button>
+    <button ion-item>
+      Story 2
+    </button>
+    <button ion-item>
+      Story 3
+    </button>
+  </ion-list>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    Things you started
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item>
+      Story 1
+    </button>
+    <button ion-item>
+      Story 2
+    </button>
+    <button ion-item>
+      Story 3
+    </button>
+  </ion-list>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    Things you've worked on
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item>
+      Story 1
+    </button>
+    <button ion-item>
+      Story 2
+    </button>
+    <button ion-item>
+      Story 3
+    </button>
+  </ion-list>
+</ion-card>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab [root]="profilePage">You</ion-tab>
+  <ion-tab [root]="explorePage">Read</ion-tab>
+</ion-tabs>
