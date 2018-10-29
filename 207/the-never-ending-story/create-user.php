@@ -16,16 +16,17 @@ require('db.php');
 $hashedPassword = md5($_POST['password']);
 
 runSafeQuery(
-  "INSERT INTO users (first_name, last_name, email, password, alias)
-    VALUES (?,?,?,?,?)
+  "INSERT INTO users (first_name, last_name, email, password, alias, img)
+    VALUES (?,?,?,?,?,?)
   ",
   [
-    "sssss",
+    "ssssss",
     $_POST['first_name'],
     $_POST['last_name'],
     $_POST['email'],
     $hashedPassword,
-    $_POST['alias']
+    $_POST['alias'],
+    'https://statics.sportskeeda.com/editor/2018/10/42081-15405387755616-800.jpg' // TODO FIX THIS
   ]
 );
 

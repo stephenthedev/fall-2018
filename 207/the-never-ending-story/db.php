@@ -100,7 +100,11 @@ function runSafeQuery($query, $params) {
   $connection->close();
 
   $results = [];
-  while ($row = $result->fetch_array()) {
+
+  // var_dump($result);
+  // die("RESULT IS" . $result);
+
+  while ($result && $row = $result->fetch_array()) {
     $results[] = $row;
   }
 

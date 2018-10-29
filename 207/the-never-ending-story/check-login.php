@@ -1,4 +1,5 @@
 <?php
+session_start();
 // check-login.php
 
 
@@ -16,6 +17,7 @@ $users = runSafeQuery(
 $user = reset($users);
 
 if ($user['password'] == md5($_POST['password'])) {
+  $_SESSION['loggedInUser'] = $user;
   header('Location: profile.php');
 } else {
   echo "Login failed";
