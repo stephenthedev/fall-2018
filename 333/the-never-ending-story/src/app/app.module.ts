@@ -14,6 +14,7 @@ import { WritePage } from '../pages/write/write';
 import { StoryComponent } from '../components/story/story';
 import { StoryControllerProvider } from '../providers/story-controller/story-controller';
 import { FacebookControllerProvider } from '../providers/facebook-controller/facebook-controller';
+import { FriendSelectedPage } from '../pages/friend-selected/friend-selected';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     SelectFriendPage,
+    FriendSelectedPage,
     // ProfilePage,
     // ExplorePage,
     TabsPage,
@@ -38,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     SelectFriendPage,
+    FriendSelectedPage,
     // ProfilePage,
     // ExplorePage,
     TabsPage,
