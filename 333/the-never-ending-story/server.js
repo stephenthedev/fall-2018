@@ -1,4 +1,9 @@
 const app = require('express')();
+const basicAuth = require('express-basic-auth')
+
+app.use(basicAuth({
+    users: { 'admin': 'supersecret' }
+}))
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
