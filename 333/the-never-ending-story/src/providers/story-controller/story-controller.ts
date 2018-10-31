@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoadingController } from 'ionic-angular';
+import { Credentials } from '../creds';
 
 /*
   Generated class for the StoryControllerProvider provider.
@@ -30,7 +31,17 @@ export class StoryControllerProvider {
   }
 
   listChaptersForAStory() {
-    return this.http.get('http://localhost:3000/chapters');
+    const creds = Credentials.getCreds();
+
+    let headers = new HttpHeaders();
+    headers.set("Authorization",
+      "Basic " + btoa(`${creds.apiUser}:${creds.apiPassword}`));
+
+
+    return this.http.get(
+      `http://localhost:3000/chapters`,
+      {headers: headers}
+    );
   }
 
 }

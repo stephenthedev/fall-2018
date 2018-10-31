@@ -26,7 +26,7 @@ export class StoryComponent {
     this.text = 'Hello World';
 
     this.storyCtrl.listChaptersForAStory().subscribe(
-      data => this.chapters = data,
+      (data: any) => this.chapters = data,
       err => console.error(err)
     );
   }

@@ -1,15 +1,15 @@
 const app = require('express')();
 const basicAuth = require('express-basic-auth')
 
-app.use(basicAuth({
-    users: { 'admin': 'supersecret' }
-}))
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+app.use(basicAuth({
+    users: { 'csit333': 'TornadoesTsunamis1234$$$' }
+}))
 
 app.get('/chapters', (req, res) => res.json([
   {
