@@ -3,13 +3,20 @@ const basicAuth = require('express-basic-auth')
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, apiKey");
   next();
 });
 
-app.use(basicAuth({
-    users: { 'csit333': 'TornadoesTsunamis1234$$$' }
-}))
+app.use((req, res, next) => {
+  if (req.headers.apikey === 'TornadoesTsunamis1234$$$') {
+    next();
+  } else if(req.method == 'OPTIONS') {
+    next();
+  } else {
+    res.sendStatus(401);
+    console.log(req.method, req.headers);
+  }
+})
 
 app.get('/chapters', (req, res) => res.json([
   {

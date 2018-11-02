@@ -33,9 +33,7 @@ export class StoryControllerProvider {
   listChaptersForAStory() {
     const creds = Credentials.getCreds();
 
-    let headers = new HttpHeaders();
-    headers.set("Authorization",
-      "Basic " + btoa(`${creds.apiUser}:${creds.apiPassword}`));
+    let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
 
 
     return this.http.get(
