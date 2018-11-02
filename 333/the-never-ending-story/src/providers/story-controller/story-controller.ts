@@ -35,9 +35,19 @@ export class StoryControllerProvider {
 
     let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
 
-
     return this.http.get(
       `http://localhost:3000/chapters`,
+      {headers: headers}
+    );
+  }
+
+  getProfile() {
+    const creds = Credentials.getCreds();
+
+    let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
+
+    return this.http.get(
+      `http://localhost:3000/profile`,
       {headers: headers}
     );
   }

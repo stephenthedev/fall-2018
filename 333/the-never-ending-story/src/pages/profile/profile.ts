@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WritePage } from '../write/write';
+import { StoryControllerProvider } from '../../providers/story-controller/story-controller';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -15,11 +16,24 @@ import { WritePage } from '../write/write';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private current: any;
+  private past: any;
+  private authored: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public storyCtrl: StoryControllerProvider
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+
+    this.storyCtrl.getProfile()
+      .subscribe(data => {
+        this.current = data.current;
+        this.past = data.past;
+        this.authored  = data.authored;
+      })
   }
 
   goToWrite() {
