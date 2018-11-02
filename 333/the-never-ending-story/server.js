@@ -9,7 +9,7 @@ app.use(function(req, res, next) {
 
 app.use((req, res, next) => {
   if (req.headers.apikey === 'TornadoesTsunamis1234$$$') {
-    next();
+    setTimeout(() => next(), 2000);
   } else if(req.method == 'OPTIONS') {
     next();
   } else {
@@ -29,5 +29,39 @@ app.get('/chapters', (req, res) => res.json([
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae expedita odit quis veniam tempore dolores reiciendis, quam iusto eos ad, sed autem nostrum neque quia minus quasi voluptatibus debitis obcaecati. Harum ratione eum, perferendis vitae quod quis, ea accusantium cupiditate commodi porro nostrum quas delectus nam hic. Perferendis minus, molestias quasi, ad, dolore placeat repellat officiis quaerat doloremque, sed qui saepe. Eaque perferendis obcaecati, accusantium eum aut laborum recusandae iste error, iusto quae cumque dolores quis velit voluptates qui labore. Repellat ad non, eius sequi, dicta harum ea hic natus dolores ducimus ex. Debitis culpa reprehenderit, quos harum similique veritatis.'
   }
 ]));
+
+app.post('/story', (req, res) => {
+  res.json({id:1});
+});
+
+app.get('/profile', (req, res) => {
+  res.json({
+    current: [{id:1, title: 'Some Current Title'}],
+    authored: [{id:1, title: 'Some Authored Title'}],
+    past: [{id:1, title: 'Some Past Title'}]
+  });
+});
+
+
+app.get('/stories', (req, res) => {
+  res.json([
+    {id:1, title: 'Some First Title', img: 'https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?auto=compress&cs=tinysrgb&h=350'},
+    {id:1, title: 'Some Second Title', img: 'https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&h=350'},
+  ])
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(3000);
