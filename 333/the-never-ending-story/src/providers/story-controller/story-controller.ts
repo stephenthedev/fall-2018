@@ -20,13 +20,18 @@ export class StoryControllerProvider {
   }
 
   saveStory(chapter: string) {
+    const creds = Credentials.getCreds();
     return new Promise((resolve, reject) => {
       let loader = this.loadingCtrl.create();
       loader.present();
-      setTimeout(() => {
-        loader.dismiss();
-        resolve();
-      }, 3000);
+
+      let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
+
+      this.http.post('http://localhost:3000/story', {}, {headers: headers})
+        .subscribe(data => {
+            loader.dismiss();
+            resolve();
+        })
     });
   }
 

@@ -29,7 +29,7 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
 
     this.storyCtrl.getProfile()
-      .subscribe(data => {
+      .subscribe((data:any) => {
         this.current = data.current;
         this.past = data.past;
         this.authored  = data.authored;
