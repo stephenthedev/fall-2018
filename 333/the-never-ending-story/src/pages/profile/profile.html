@@ -20,14 +20,8 @@
   </ion-card-header>
 
   <ion-list>
-    <button ion-item>
-      Story 1
-    </button>
-    <button ion-item>
-      Story 2
-    </button>
-    <button ion-item>
-      Story 3
+    <button *ngFor="let story of authored" ion-item (click)="goToWrite()">
+      {{story.title}}
     </button>
   </ion-list>
 </ion-card>
@@ -38,14 +32,8 @@
   </ion-card-header>
 
   <ion-list>
-    <button ion-item>
-      Story 1
-    </button>
-    <button ion-item>
-      Story 2
-    </button>
-    <button ion-item>
-      Story 3
+    <button *ngFor="let story of past" ion-item (click)="goToWrite()">
+      {{story.title}}
     </button>
   </ion-list>
 </ion-card>
