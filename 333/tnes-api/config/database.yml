@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgressql
+  database: tnes_production
+  username: ENV['MYAPP_DATABASE_USER']
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
