@@ -24,4 +24,4 @@ production:
   <<: *default
   adapter: postgressql
   database: tnes_production
-  url: ENV['DATABASE_URL']
+  url: <%= ENV['DATABASE_URL'] %>
