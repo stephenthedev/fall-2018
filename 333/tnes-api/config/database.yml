@@ -24,5 +24,4 @@ production:
   <<: *default
   adapter: postgressql
   database: tnes_production
-  username: ENV['MYAPP_DATABASE_USER']
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  url: ENV['DATABASE_URL']
