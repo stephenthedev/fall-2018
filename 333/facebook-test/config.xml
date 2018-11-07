@@ -86,4 +86,5 @@
         <variable name="APP_ID" value="726046427761412" />
         <variable name="APP_NAME" value="the-never-ending-story" />
     </plugin>
+    <engine name="ios" spec="4.5.5" />
 </widget>

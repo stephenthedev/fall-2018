@@ -51,7 +51,11 @@ export class StoryControllerProvider {
   buildHeaders() {
     const creds = Credentials.getCreds();
 
-    return new HttpHeaders().set("apiKey", creds.apiPassword);
+    return new HttpHeaders()
+      .set(
+        "Authorization",
+        "Basic " + btoa(`${creds.apiUser}:${creds.apiPassword}`)
+      );
   }
 
 }
