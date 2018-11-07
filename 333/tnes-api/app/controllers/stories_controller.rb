@@ -7,6 +7,14 @@ class StoriesController < ApplicationController
     @stories = Story.all
   end
 
+  def profile
+    render json: {
+      current: Story.all,
+      past: Story.all,
+      authored: Story.all
+    }
+  end
+
   # GET /stories/1
   # GET /stories/1.json
   def show
