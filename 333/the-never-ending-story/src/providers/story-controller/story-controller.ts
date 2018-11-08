@@ -26,7 +26,7 @@ export class StoryControllerProvider {
       let loader = this.loadingCtrl.create();
       loader.present();
 
-      this.http.post(this.apiUrl + '/stories.json', {}, {headers: this.buildHeaders()})
+      this.http.post(this.apiUrl + '/stories', {}, {headers: this.buildHeaders()})
         .subscribe(data => {
             loader.dismiss();
             resolve();
