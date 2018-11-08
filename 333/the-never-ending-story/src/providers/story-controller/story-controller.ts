@@ -26,24 +26,27 @@ export class StoryControllerProvider {
       let loader = this.loadingCtrl.create();
       loader.present();
 
-      this.http.post(this.apiUrl + '/stories', {
+      this.http.post(this.apiUrl + '/stories.json ', {
         story: {
           title: 'Some Title We need to Fix',
           chapters: [{
-            text:chapter
+            text: chapter
           }]
         }
       }, {headers: this.buildHeaders()})
         .subscribe(data => {
             loader.dismiss();
             resolve();
+        }, err => {
+          console.error(err);
+          throw err;
         })
     });
   }
 
   listChaptersForAStory() {
     return this.http.get(
-      this.apiUrl + `/chapters`,
+      this.apiUrl + `/chapters.json`,
       {headers: this.buildHeaders()}
     );
   }
