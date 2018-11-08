@@ -39,10 +39,17 @@ function getMyStories() {
   ];
 }
 
-function getStory() {
-  $stories = simpleGet("SELECT * FROM stories WHERE id = 1");
+function getStory($id) {
+  $stories = runSafeQuery(
+    "SELECT * FROM stories WHERE id = ?",
+    ['i', $id]
+  );
   $story = reset($stories);
-  $chapters = simpleGet("SELECT * FROM chapters WHERE story_id = 1");
+
+  $chapters = runSafeQuery(
+    "SELECT * FROM chapters WHERE story_id = ?",
+    ["i", $id]
+  );
 
   return [
     'title' => $story['title'],
@@ -118,7 +125,21 @@ function removeExcerptById($id) {
   );
 }
 
+function getCompletedStories() {
+  $stories = runSafeQuery(
+    "SELECT * FROM stories WHERE is_done = true",
+    []
+  );
 
+  foreach ($stories as &$story) {
+    $story['chapters'] = runSafeQuery(
+      "SELECT * FROM chapters WHERE story_id = " . $story['id'],
+      []
+    );
+  }
+
+  return $stories;
+}
 
 
 

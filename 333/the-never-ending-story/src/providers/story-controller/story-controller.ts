@@ -12,6 +12,8 @@ import { Credentials } from '../creds';
 @Injectable()
 export class StoryControllerProvider {
 
+  private apiUrl = 'https://infinite-taiga-76404.herokuapp.com';
+
   constructor(
     public loadingCtrl: LoadingController,
     public http: HttpClient
@@ -20,14 +22,11 @@ export class StoryControllerProvider {
   }
 
   saveStory(chapter: string) {
-    const creds = Credentials.getCreds();
     return new Promise((resolve, reject) => {
       let loader = this.loadingCtrl.create();
       loader.present();
 
-      let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
-
-      this.http.post('http://localhost:3000/story', {}, {headers: headers})
+      this.http.post(this.apiUrl + '/story', {}, {headers: this.buildHeaders()})
         .subscribe(data => {
             loader.dismiss();
             resolve();
@@ -36,25 +35,27 @@ export class StoryControllerProvider {
   }
 
   listChaptersForAStory() {
-    const creds = Credentials.getCreds();
-
-    let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
-
     return this.http.get(
-      `http://localhost:3000/chapters`,
-      {headers: headers}
+      this.apiUrl + `/chapters`,
+      {headers: this.buildHeaders()}
     );
   }
 
   getProfile() {
+    return this.http.get(
+      this.apiUrl + '/profile',
+      {headers: this.buildHeaders()}
+    );
+  }
+
+  buildHeaders() {
     const creds = Credentials.getCreds();
 
-    let headers = new HttpHeaders().set("apiKey", creds.apiPassword);
-
-    return this.http.get(
-      `http://localhost:3000/profile`,
-      {headers: headers}
-    );
+    return new HttpHeaders()
+      .set(
+        "Authorization",
+        "Basic " + btoa(`${creds.apiUser}:${creds.apiPassword}`)
+      );
   }
 
 }
