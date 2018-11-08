@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
+    @stories = Story.includes(:chapters).all
   end
 
   def profile
@@ -18,6 +18,7 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @story = Story.includes(:chapters).find params[:id]
   end
 
   # GET /stories/new
@@ -72,7 +73,7 @@ class StoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_story
-      @story = Story.find(params[:id])
+      @story = Story.includes(:chapters).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
