@@ -26,7 +26,14 @@ export class StoryControllerProvider {
       let loader = this.loadingCtrl.create();
       loader.present();
 
-      this.http.post(this.apiUrl + '/stories', {}, {headers: this.buildHeaders()})
+      this.http.post(this.apiUrl + '/stories', {
+        story: {
+          title: 'Some Title We need to Fix',
+          chapters: [{
+            text:chapter
+          }]
+        }
+      }, {headers: this.buildHeaders()})
         .subscribe(data => {
             loader.dismiss();
             resolve();
