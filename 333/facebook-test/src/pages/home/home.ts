@@ -8,13 +8,17 @@ import { Facebook } from '@ionic-native/facebook';
 })
 export class HomePage {
 
+  private res: any = {};
+
   constructor(public navCtrl: NavController, private fb:Facebook) {
 
   }
 
   startAuth() {
     this.fb.login(['public_profile'])
-      .then((res:any) => console.log('success', res))
+      .then((res:any) => {
+        this.res = res;
+      })
       .catch(e => console.error(e));
   }
 
