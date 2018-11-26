@@ -51,6 +51,13 @@ export class StoryControllerProvider {
     );
   }
 
+  listStories() {
+    return this.http.get(
+      this.apiUrl + `/stories.json`,
+      {headers: this.buildHeaders()}
+    );
+  }
+
   getProfile() {
     return this.http.get(
       this.apiUrl + '/profile',
