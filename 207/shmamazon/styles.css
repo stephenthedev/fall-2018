@@ -1,0 +1,95 @@
+body, html {
+  margin: 0;
+}
+header {
+  height: 70px;
+  background-color: red;
+  overflow: hidden;
+}
+
+header img {
+  height: 70px;
+  float: left;
+}
+
+header h2 {
+  margin: 0;
+  float: left;
+  width: auto;
+  font-size: 12px;
+  line-height: 70px;
+}
+
+header button {
+  float: left;
+  height: 60px;
+  width: 100px;
+  margin-top: 5px;
+}
+
+nav {
+  background-color: #1f205f;
+  height: 120px;
+}
+
+nav .first img {
+  height: 60px;
+  float: left;
+}
+
+nav .first button {
+  height: 60px;
+  width: 60px;
+  float: left;
+}
+
+nav .first div button {
+  height: 50px;
+  float: left;
+}
+
+nav div {
+  float: left;
+}
+
+nav input {
+  width: 1000px;
+  float: left;
+}
+
+nav .second {
+  clear: both;
+  height: 60px;
+}
+
+nav .second a div {
+  display: none;
+}
+
+nav .second a:hover div {
+  display: block;
+}
+
+#main {
+  float: left;
+  max-width: 1420px;
+  margin-left: 130px;
+  background: #00416A;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(#E4E5E6, #00416A);
+background: -o-linear-gradient(#E4E5E6, #00416A);
+background: linear-gradient(#E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#main #banner img {
+  width: 100%;
+}
+
+.card {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 8px;
+  width: 25%;
+  float: left;
+}
